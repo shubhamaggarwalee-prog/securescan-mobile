@@ -1,0 +1,121 @@
+{
+  "expo": {
+    "name": "SecureScan",
+    "slug": "securescan",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "icon": "./assets/icon.png",
+    "scheme": "securescan",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#f0f4f8"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "io.securescan.app",
+      "buildNumber": "1",
+      "requireFullScreen": false,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "SecureScan uses Face ID to securely log you in.",
+        "NSCameraUsageDescription": "SecureScan uses your camera to scan QR codes for quick URL entry.",
+        "NSPhotoLibraryUsageDescription": "SecureScan saves PDF scan reports to your photo library.",
+        "NSUserTrackingUsageDescription": "This identifier will be used to deliver personalized security recommendations.",
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSAppTransportSecurity": { "NSAllowsArbitraryLoads": false },
+        "LSApplicationQueriesSchemes": ["https", "http"],
+        "UIRequiresFullScreen": false,
+        "UISupportedInterfaceOrientations": ["UIInterfaceOrientationPortrait", "UIInterfaceOrientationPortraitUpsideDown"]
+      },
+      "config": { "usesNonExemptEncryption": false },
+      "associatedDomains": ["applinks:securescan.io", "webcredentials:securescan.io"],
+      "privacyManifests": {
+        "NSPrivacyAccessedAPITypes": [
+          { "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults", "NSPrivacyAccessedAPITypeReasons": ["CA92.1"] },
+          { "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp", "NSPrivacyAccessedAPITypeReasons": ["C617.1"] },
+          { "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategorySystemBootTime", "NSPrivacyAccessedAPITypeReasons": ["35F9.1"] },
+          { "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryDiskSpace", "NSPrivacyAccessedAPITypeReasons": ["E174.1"] }
+        ],
+        "NSPrivacyCollectedDataTypes": [
+          {
+            "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypeEmailAddress",
+            "NSPrivacyCollectedDataTypeLinked": true,
+            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypePurposes": ["NSPrivacyCollectedDataTypePurposeAppFunctionality"]
+          }
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#f0f4f8"
+      },
+      "package": "io.securescan.app",
+      "versionCode": 1,
+      "compileSdkVersion": 34,
+      "targetSdkVersion": 34,
+      "minSdkVersion": 24,
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT",
+        "android.permission.VIBRATE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.CAMERA",
+        "android.permission.POST_NOTIFICATIONS"
+      ],
+      "googleServicesFile": "./google-services.json",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [{ "scheme": "https", "host": "securescan.io", "pathPrefix": "/app" }],
+          "category": ["BROWSABLE", "DEFAULT"]
+        },
+        {
+          "action": "VIEW",
+          "data": [{ "scheme": "securescan" }],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "web": { "favicon": "./assets/favicon.png", "bundler": "metro" },
+    "plugins": [
+      "expo-secure-store",
+      "expo-tracking-transparency",
+      ["expo-build-properties", {
+        "ios": { "deploymentTarget": "15.1" },
+        "android": { "compileSdkVersion": 34, "targetSdkVersion": 34, "buildToolsVersion": "34.0.0" }
+      }],
+      ["expo-local-authentication", {
+        "faceIDPermission": "SecureScan uses Face ID to securely authenticate you."
+      }],
+      ["expo-notifications", {
+        "icon": "./assets/notification-icon.png",
+        "color": "#0077cc",
+        "sounds": [],
+        "androidMode": "default",
+        "androidCollapsedTitle": "SecureScan Alert",
+        "iosDisplayInForeground": true
+      }],
+      ["expo-splash-screen", {
+        "image": "./assets/splash.png",
+        "imageWidth": 200,
+        "resizeMode": "contain",
+        "backgroundColor": "#f0f4f8"
+      }]
+    ],
+    "extra": {
+      "eas": { "projectId": "YOUR-EAS-PROJECT-ID" },
+      "apiUrl": "https://YOUR-RAILWAY-URL.up.railway.app",
+      "supabaseUrl": "https://YOUR-PROJECT.supabase.co",
+      "supabaseAnonKey": "YOUR-SUPABASE-ANON-KEY",
+      "revenuecatApiKeyIos": "appl_YOUR-REVENUECAT-IOS-KEY",
+      "revenuecatApiKeyAndroid": "goog_YOUR-REVENUECAT-ANDROID-KEY"
+    },
+    "owner": "YOUR-EXPO-USERNAME"
+  }
+}

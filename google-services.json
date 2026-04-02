@@ -1,0 +1,20 @@
+{
+  "_README": "Replace this file with your real google-services.json from Firebase Console",
+  "_INSTRUCTIONS": "Firebase Console → Project Settings → Your Android app → Download google-services.json",
+  "project_info": {
+    "project_number": "000000000000",
+    "project_id": "securescan-placeholder",
+    "storage_bucket": "securescan-placeholder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
+        "android_client_info": { "package_name": "io.securescan.app" }
+      },
+      "api_key": [{ "current_key": "REPLACE_WITH_REAL_KEY" }],
+      "services": { "appinvite_service": { "other_platform_oauth_client": [] } }
+    }
+  ],
+  "configuration_version": "1"
+}
